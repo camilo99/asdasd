@@ -10,16 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
-Route::get('/','FrontedController@index');
 
+Route::get('/', function(){
+	return view('admin.index');
+});
 
-Route::get('/listas de personas', function(){
-	return view('web.listas');
-})->name('list_obj');
+Route::group(['prefix' => 'admin'], function(){
 
-Route::get('/añadir personas', function(){
-	return view('web.create');
-})->name('add_obj');
-
-Route::resource('persona', 'PersonaController');
+	Route::resource('users', 'UsersController');
+});

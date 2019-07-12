@@ -18,8 +18,8 @@
     <h1>¡Hola mundo!</h1>
  
     <ul>
-    	<li><a href="{{route('list_obj')}}"> sección de listado</a></li>
-    	<a class="btn btn-success" href="{{ route('add_obj') }}">
+    	<li><a href="{route('users.listas')}"> sección de listado</a></li>
+    	<a class="btn btn-success" href="{ route('users.create') }">
     Añadir usuario
 </a>
     	

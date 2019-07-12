@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 class PersonaController extends Controller
 {
     public function index(){
-    	 $users = User::all();
+    	 $datos = User::all();
     }
     public function create(){
     		return view('web.create');  
     }
     public function store(Request $request){
     	
-    	        $users = new User();
+    	        $datos = new User();
        
         $user->name = $request->get('name');
         $user->email = $request->get('email');

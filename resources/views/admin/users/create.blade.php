@@ -24,8 +24,27 @@
 }
 	</style>
 </head>
-<body>
-	<div class="container">
+ <body> 
+
+    {!! Form::open(['route' => 'users.store', 'method' => 'POST']) !!}
+        <div class="form-group">
+            {!! Form::label('name', 'Nombre') !!}
+            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre completo', 'required'])!!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('email', 'Correo electronico') !!}
+            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'example@gmail.com', 'required'])!!}
+        </div>
+         <div class="form-group">
+             { !! Form::label('age', 'edad')!! }
+            {!! Form::text('age', null, ['class' => 'form-control', 'placeholder' => 'escriba su edad', 'required'])!!}
+        </div> 
+        <div class="form-group">
+            {!! Form::submit('Registrar', ['class'=>'btn btn-primary'])!!}
+        </div>
+        
+    {!! Form::close() !!}
+	<!-- <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
@@ -65,6 +84,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 </body>
 </html>
