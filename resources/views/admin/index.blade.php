@@ -1,4 +1,4 @@
-@extends('layout.home');
+@extends('layout.home')
 
 @section('content')
 <!DOCTYPE html>
@@ -18,8 +18,8 @@
     <h1>¡Hola mundo!</h1>
  
     <ul>
-    	<li><a href="{route('users.listas')}"> sección de listado</a></li>
-    	<a class="btn btn-success" href="{ route('users.create') }">
+    	<li><a href="{{route('users.listas')}}"> sección de listado</a></li> 
+    	<a class="btn btn-success" href="{{ route('users.create') }}">
     Añadir usuario
 </a>
     	

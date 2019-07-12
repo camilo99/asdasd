@@ -19,3 +19,6 @@ Route::group(['prefix' => 'admin'], function(){
 
 	Route::resource('users', 'UsersController');
 });
+
+
+Route::get('users/listar', 'UsersController@index')->name('users.listas');

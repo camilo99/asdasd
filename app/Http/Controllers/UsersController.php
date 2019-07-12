@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Datos;
 class UsersController extends Controller
 {
     /**
@@ -13,6 +14,8 @@ class UsersController extends Controller
      */
     public function index()
     { 
+        $datos = User::all();
+        return view('admin.users.listas');
     }
 
     /**
@@ -35,6 +38,7 @@ class UsersController extends Controller
     {
         $user = new User($request->all());
         $user->name = ($request->name);
+        $user->age = ($request->age);
         $user->email = ($request->email);
         $user->save();
         dd('usuario creado');
