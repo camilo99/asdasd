@@ -15,10 +15,16 @@ Route::get('/', function(){
 	return view('admin.index');
 });
 
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'index'], function(){
 
-	Route::resource('users', 'UsersController');
+	Route::resource('users', 'PersonaController');
 });
 
+Route::get('users/listas', 'PersonaController@index')->name('users.listas');
 
-Route::get('users/listar', 'UsersController@index')->name('users.listas');
+Route::get('users/create', 'PersonaController@create')->name('users.create');
+
+Route::get('users/edit', 'PersonaController@edit')->name('users.edit');
+
+Route::get('users/delete', 'PersonaController@delete')->name('users.delete');
+

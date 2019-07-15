@@ -1,6 +1,6 @@
 @extends('layout.home')
 
-@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,13 +19,15 @@
  
     <ul>
     	<li><a href="{{route('users.listas')}}"> sección de listado</a></li> 
-    	<a class="btn btn-success" href="{{ route('users.create') }}">
+    <!-- 	<a class="btn btn-success" href="{{ route('users.create') }}">
     Añadir usuario
 </a>
+ -->
+        <li><a href=""> Otros.. </a></li> 
     	
     	
     </ul> 
-
+    
 
     <!-- Librería jQuery requerida por los plugins de JavaScript -->
     <script src="http://code.jquery.com/jquery.js"></script>
@@ -36,4 +38,3 @@
 </html>
 
 
-@endsection
