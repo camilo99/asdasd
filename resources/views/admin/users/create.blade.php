@@ -40,7 +40,7 @@
             {!! Form::text('age', null, ['class' => 'form-control', 'placeholder' => 'escriba su edad'])!!}
         </div> 
         <div class="form-group">
-            <a class="btn btn-info" href="{{ route('users.listas') }}"> Registrar</a>
+            {!! Form::submit('Registrar', ['class'=>'btn btn-primary'])!!}
             <input type=button class="btn btn-info btn-md" value=atras onclick="history.go(-1)">
         </div>
         

@@ -15,7 +15,7 @@
 
   </head>
   <body>
-    <h1>¡Hola mundo!</h1>
+    <h1 style="margin-left:2%;">Bienvenido</h1>
  
     <ul>
     	<li><a href="{{route('users.listas')}}"> sección de listado</a></li> 
