@@ -25,7 +25,8 @@ class PersonaController extends Controller
         $user->save();
 
 
-          return view('admin.users.listas');
+            return redirect()->route('users.listas');
+      
     }
 
     public function show($id){

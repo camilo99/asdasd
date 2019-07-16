@@ -16,6 +16,12 @@
         .w-auto {
      width: 100%!important;
 }
+.row {
+    display: flex;
+     flex-wrap: wrap;
+    margin-right: 0;
+     margin-left: 0; 
+}
     a{
         margin-left:2%;
     }
@@ -60,6 +66,7 @@
     
     </tbody>
 </table>
+{{ $users->links() }}
     <div class="row">
         <div class="col-md-12">
           <div class="col-md-offset-5">
