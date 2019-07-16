@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Laracasts\Flash\Flash;
+use Illuminate\Support\Facades\Input;
 
 
 class PersonaController extends Controller
@@ -24,7 +25,7 @@ class PersonaController extends Controller
         $user->save();
 
 
-          return view('admin.users.create');
+          return view('admin.users.listas');
     }
 
     public function show($id){
@@ -49,21 +50,18 @@ class PersonaController extends Controller
         $data = Input::all();
         
         // Revisamos si la data es válido
-        if ($user->isValid($data))
-        {
-            // Si la data es valida se la asignamos al usuario
+        if (!is_null($id)){
+              // Si la data es valida se la asignamos al usuario
             $user->fill($data);
             // Guardamos el usuario
             $user->save();
             // Y Devolvemos una redirección a la acción show para mostrar el usuario
-            return Redirect::route('admin.users.listas', array($user->id));
-
-
-
+            return redirect()->route('users.listas');
         }
         else
         {
             // En caso de error regresa a la acción edit con los datos y los errores encontrados
+
             return Redirect::route('admin.users.edit', $user->id)->withInput()->withErrors($user->errors);
         }
             // $user = User::find($id);
@@ -77,9 +75,31 @@ class PersonaController extends Controller
     }
     public function destroy($id){
         $user = User::find($id);
-        $user->delete();
+        
+        if (is_null ($user))
+        {
+            App::abort(404);
+        }
+        
+        if (!is_null($id)) {
+            $user->delete();
 
-        Flash::error('El usuario' .$user->name. 'ha sido borrado');
-        return view('admin.users.listas');
+            return redirect()->route('users.listas');
+           
+        }
+       
+
+        // if (Request::ajax())
+        // {
+        //     return Response::json(array (
+        //         'success' => true,
+        //         'msg'     => 'Usuario ' . $user->name . ' eliminado',
+        //         'id'      => $user->id
+        //     ));
+        // }
+        // else
+        // {
+        //     return Redirect::route('admin.users.listas');
+        // }
     }
 }

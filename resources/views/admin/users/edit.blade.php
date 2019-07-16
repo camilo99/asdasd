@@ -26,7 +26,7 @@
 </head>
  <body> 
 
-       {!! Form::open(['route' => 'users.update', 'method' => 'PUT']) !!}
+       {!! Form::open(['route' => ['users.update',$user->id], 'method' => 'PUT']) !!}
         <div class="form-group">
             {!! Form::label('name', 'Nombre') !!}
             {!! Form::text('name', $user->name, ['class' => 'form-control', 'placeholder' => 'Nombre completo', 'required'])!!}

@@ -17,6 +17,13 @@
     font-size: 27px;
     padding: 10px;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
 
 .bigicon {
     font-size: 35px;
@@ -37,7 +44,7 @@
         </div>
          <div class="form-group">
             {!! Form::label('age', 'edad')!!}
-            {!! Form::text('age', null, ['class' => 'form-control', 'placeholder' => 'escriba su edad'])!!}
+            <input type="number" class="form-control" name="age">
         </div> 
         <div class="form-group">
             {!! Form::submit('Registrar', ['class'=>'btn btn-primary'])!!}
